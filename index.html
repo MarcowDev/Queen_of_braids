@@ -4,145 +4,61 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Queen of Braids</title>
+  <meta name="description" content="Agende seu horário e realce sua beleza com a Queen of Braids. Estilos afro, tranças, e muito mais. Atendimento com amor e atitude.">
+  <link rel="icon" href="fotos/Queen_logo.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background-color: #fffaf5; color: #333; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    header { text-align: center; padding: 2rem; background-color: #f6d5e1; }
+    header h1 { font-size: 2.5rem; color: #880e4f; }
+    header p { font-size: 1.2rem; margin-top: 0.5rem; }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #fffaf5;
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem;
-      background-color: #f6d5e1;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      color: #880e4f;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-    }
-
-    .imagem-logo {
-      display: block;
-      margin: 1.5rem auto;
-      max-width: 250px;
-      height: auto;
-    }
+    .imagem-logo { display: block; margin: 1.5rem auto; max-width: 250px; height: auto; }
 
     @media (max-width: 600px) {
-      .imagem-logo {
-        max-width: 290px;
-      }
+      .imagem-logo { max-width: 290px; }
     }
 
     .navigation {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-      background-color: #fff0f5;
-      padding: 1rem;
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 1rem; background-color: #fff0f5; padding: 1rem;
     }
 
-    section {
-      padding: 2rem;
-      text-align: center;
-    }
-
-    h2 {
-      color: #880e4f;
-      margin-bottom: 1rem;
-    }
+    section { padding: 2rem; text-align: center; }
+    h2 { color: #880e4f; margin-bottom: 1rem; }
 
     .btn {
-      text-decoration: none;
-      background-color: #880e4f;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 25px;
-      font-weight: bold;
-      transition: all 0.3s ease;
-      display: inline-block;
+      text-decoration: none; background-color: #880e4f; color: white;
+      padding: 1rem 2rem; border-radius: 25px; font-weight: bold;
+      transition: all 0.3s ease; display: inline-block;
     }
 
-    .btn:hover {
-      background-color: #c2185b;
-      transform: scale(1.05);
-    }
+    .btn:hover { background-color: #c2185b; transform: scale(1.05); }
 
-    .carousel {
-      overflow: hidden;
-      max-width: 600px;
-      margin: 0 auto;
-      border-radius: 10px;
-    }
+    .carousel { overflow: hidden; max-width: 600px; margin: 0 auto; border-radius: 10px; }
+    .carousel-track { display: flex; width: max-content; }
+    .carousel-track img { width: 600px; height: auto; border-radius: 10px; }
 
-    .carousel-track {
-      display: flex;
-      width: max-content;
-    }
-
-    .carousel-track img {
-      width: 600px;
-      height: auto;
-      border-radius: 10px;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background-color: #f6d5e1;
-    }
+    footer { text-align: center; padding: 2rem 1rem; background-color: #f6d5e1; }
 
     .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      position: fixed; width: 60px; height: 60px; bottom: 20px; right: 20px;
+      background-color: #25d366; color: white; border-radius: 50%;
+      text-align: center; font-size: 30px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      z-index: 1000; display: flex; align-items: center; justify-content: center;
     }
 
-    .whatsapp-float:hover {
-      background-color: #1ebe5d;
-    }
+    .whatsapp-float:hover { background-color: #1ebe5d; }
 
     @media (max-width: 650px) {
-      .carousel-track img {
-        width: 100vw;
-      }
-
-      .carousel {
-        max-width: 100vw;
-      }
+      .carousel-track img { width: 100vw; }
+      .carousel { max-width: 100vw; }
     }
   </style>
 </head>
@@ -171,21 +87,23 @@
     <h2>Galeria de Estilos</h2>
     <div class="carousel">
       <div class="carousel-track">
+        <!-- Imagens da galeria -->
         <img src="fotos/estilo1.jpg" alt="Trança 1">
-        <img src="fotos/estilo2.jpg" alt="Trança 2">
-        <img src="fotos/estilo3.jpg" alt="Trança 3">
-        <img src="fotos/estilo4.jpg" alt="Trança 4">
-        <img src="fotos/estilo5.jpg" alt="Trança 5">
-        <img src="fotos/estilo6.jpg" alt="Trança 6">
-        <img src="fotos/estilo7.jpg" alt="Trança 7">
-        <img src="fotos/estilo8.jpg" alt="Trança 8">  
-        <img src="fotos/estilo9.jpg" alt="Trança 9">
-        <img src="fotos/estilo10.jpg" alt="Trança 10">
-        <img src="fotos/estilo11.jpg" alt="Trança 11">
-        <img src="fotos/estilo12.jpg" alt="Trança 12">  
-        <img src="fotos/estilo13.jpg" alt="Trança 13">
-        <img src="fotos/estilo14.jpg" alt="Trança 14">
-        <img src="fotos/estilo15.jpg" alt="Trança 15">
+<img src="fotos/estilo2.jpg" alt="Trança 2">
+<img src="fotos/estilo3.jpg" alt="Trança 3">
+<img src="fotos/estilo4.jpg" alt="Trança 4">
+<img src="fotos/estilo5.jpg" alt="Trança 5">
+<img src="fotos/estilo6.jpg" alt="Trança 6">
+<img src="fotos/estilo7.jpg" alt="Trança 7">
+<img src="fotos/estilo8.jpg" alt="Trança 8">
+<img src="fotos/estilo9.jpg" alt="Trança 9">
+<img src="fotos/estilo10.jpg" alt="Trança 10">
+<img src="fotos/estilo11.jpg" alt="Trança 11">
+<img src="fotos/estilo12.jpg" alt="Trança 12">
+<img src="fotos/estilo13.jpg" alt="Trança 13">
+<img src="fotos/estilo14.jpg" alt="Trança 14">
+<img src="fotos/estilo15.jpg" alt="Trança 15">
+
       </div>
     </div>
   </section>
@@ -206,7 +124,6 @@
   </a>
 
   <script>
-    // Carousel automático
     $(document).ready(function() {
       function moveCarousel() {
         const track = $('.carousel-track');

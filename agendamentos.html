@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agendamentos | Queen of Braids</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    .calendar-container {
+      margin-top: 2rem;
+    }
+
+    .calendar-input {
+      padding: 1rem;
+      font-size: 1rem;
+      border: 2px solid #880e4f;
+      border-radius: 10px;
+      max-width: 300px;
+      margin: 1rem auto;
+      display: block;
+    }
+
+    .calendar-button {
+      background-color: #880e4f;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .calendar-button:hover {
+      background-color: #c2185b;
+    }
+
+    .calendar-success {
+      color: green;
+      font-weight: bold;
+      margin-top: 1rem;
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .servicos-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background-color: #fff0f5;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      color: #880e4f;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 1.2rem;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin: 1.5rem 0;
+    }
+
+    .imagem-logo {
+      width: 220px;
+      height: auto;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .animated-logo {
+      animation: pulseLogo 2s infinite;
+    }
+
+    @keyframes pulseLogo {
+      0%, 100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 5px #ff80ab);
+      }
+      50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 15px #ff4081);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a id="topo"></a>
+  <header>
+    <h1>👑 Queen of Braids</h1>
+    <p>Agende seu horário e prepare-se para brilhar!</p>
+  </header>
+
+  <div class="logo-container">
+    <img src="fotos/Queen_logo.png" alt="Logo Queen of Braids" class="imagem-logo animated-logo">
+  </div>
+
+  <nav class="navigation">
+    <a href="index.html" class="btn">⬅️ Voltar ao Início</a>
+    <a href="#disponibilidade" class="btn">Horários Disponíveis</a>
+    <a href="#contato" class="btn">Falar com a Trancista</a>
+  </nav>
+
+  <section id="disponibilidade">
+    <h2>Horários & Informações</h2>
+    <p>Para agendamentos, entre em contato direto com a trancista. Ela irá confirmar a melhor data e horário conforme disponibilidade.</p>
+    <p>📅 Atendimentos aos fins de semana</p>
+    <p>📍 Região de atuação: Belo Horizonte - MG</p>
+
+    <div class="calendar-container">
+      <h3>Escolha a data do seu atendimento:</h3>
+      <input type="date" id="dataSelecionada" class="calendar-input">
+      <button class="calendar-button" onclick="enviarParaWhatsapp()">Selecionar Data</button>
+      <p id="feedbackMensagem" class="calendar-success" style="display: none;">Redirecionando para o WhatsApp... 💬</p>
+    </div>
+  </section>
+
+  <section id="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="servicos-cards">
+      <div class="card">
+        <img src="fotos/meia_costa.jpg" alt="Modelo meia costa">
+        <h3>Trança Meia Costa</h3>
+        <p>R$ 160,00</p>
+      </div>
+      <div class="card">
+        <img src="fotos/modelo_longo.jpg" alt="Trança Modelo longo">
+        <h3>Trança Modelo Longo</h3>
+        <p>R$ 185,00</p>
+      </div>
+      <div class="card">
+        <img src="fotos/nago.jpg" alt="Tiara nagô desenhada">
+        <h3>Tiara Nagô Desenhada</h3>
+        <p>R$ 45,00</p>
+      </div>
+      <div class="card">
+        <img src="fotos/coque.jpg" alt="tiara Nagô + coque">
+        <h3>Tiara Nagô + Coque</h3>
+        <p>R$ 50,00</p>
+      </div>
+      <div class="card">
+        <img src="fotos/nago_desenhada.jpg" alt="Tiara nagô desenhada + fitagem">
+        <h3>Tiara nagô desenhada + fitagem</h3>
+        <p>R$ 65,00</p>
+      </div>
+      <div class="card">
+        <img src="fotos/faux_locs.jpg" alt="Trança Faux locs">
+        <h3>Trança Faux locs</h3>
+        <p>R$ 180,00</p>
+      </div>
+      <div class="card">
+        <img src="fotos/boho_curl.jpg" alt="Trança boho curl">
+        <h3>Trança boho curl</h3>
+        <p>R$ 200,00</p>
+      </div>
+      <div class="card">
+        <img src="fotos/chanel.jpg" alt="Trança chanel">
+        <h3>Trança Chanel</h3>
+        <p>R$ 120,00</p>
+      </div>
+      <div class="card">
+        <img src="fotos/gypsi_braids.jpg" alt="Trança gypsi braids">
+        <h3>Trança Gypsi Braids</h3>
+        <p>R$ 100,00 chanel</p>
+        <p>R$ 170,00 meia costa</p>
+        <p>R$ 195,00 longa</p>
+      </div>
+      <div class="card">
+        <img src="fotos/twist_masculina.jpg" alt="Trança twist masculino">
+        <h3>Trança Twist Masculino</h3>
+        <p>R$ 130,00 chanel</p>
+        <p>R$ 150,00 medio</p>
+      </div>
+      <div class="card">
+        <img src="fotos/tranca_masculina.jpg" alt="Trança box braids">
+        <h3>Trança nagô masculina</h3>
+        <p>R$ 65,00 simples</p>
+        <p>R$ 70,00 desenhada</p>
+    </div>
+  </section>
+
+  <section id="pdf-servicos">
+    <h2>Valores em PDF</h2>
+    <p>Você pode visualizar ou baixar os valores detalhados dos nossos serviços:</p>
+    <a href="arquivos/valores_servicos.pdf" download class="btn" onclick="event.preventDefault(); window.location.href=this.href;">⬇️ Baixar PDF</a>
+    <a href="arquivos/valores_servicos.pdf" target="_blank" class="btn">📄 Ver PDF de Serviços</a>
+    <br><br>
+    <iframe src="arquivos/valores_servicos.pdf" width="100%" height="600px" style="border: none; border-radius: 12px;"></iframe>
+  </section>
+
+  <section id="contato">
+    <h2>Agende agora pelo WhatsApp</h2>
+    <p>Ou clique diretamente no botão abaixo para conversar e garantir seu horário:</p>
+    <a href="https://wa.me/553171536509" target="_blank" class="btn whatsapp-btn">📞 Falar com a Trancista</a>
+  </section>
+
+  <footer>
+    <a href="#topo" class="btn">⬆️ Voltar ao Topo</a>
+    <p>&copy; 2025 Queen of Braids. Todos os direitos reservados.</p>
+  </footer>
+
+  <a href="https://wa.me/553171536509" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    function enviarParaWhatsapp() {
+      const data = document.getElementById("dataSelecionada").value;
+      const feedback = document.getElementById("feedbackMensagem");
+
+      if (!data) {
+        alert("Por favor, selecione uma data válida.");
+        return;
+      }
+
+      const partes = data.split('-');
+      const date = new Date(parseInt(partes[0]), parseInt(partes[1]) - 1, parseInt(partes[2]));
+      const dia = date.getDay();
+
+      if (dia !== 0 && dia !== 6) {
+        alert("Ops! Só atendemos aos sábados e domingos. Escolha um fim de semana.");
+        return;
+      }
+
+      const dataFormatada = date.toLocaleDateString("pt-BR", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+      const mensagem = `Olá, gostaria de agendar um atendimento para ${dataFormatada}.`;
+      const link = `https://wa.me/553171536509?text=${encodeURIComponent(mensagem)}`;
+
+      feedback.style.display = 'block';
+
+      setTimeout(() => {
+        window.open(link, "_blank");
+        feedback.style.display = 'none';
+      }, 1500);
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+  const inputData = document.getElementById("dataSelecionada");
+  const hoje = new Date();
+  hoje.setHours(0, 0, 0, 0);
+  const hojeISO = hoje.toISOString().split("T")[0];
+  inputData.setAttribute("min", hojeISO);
+
+  inputData.addEventListener("change", function() {
+    const partes = this.value.split('-');
+    const dataSelecionada = new Date(parseInt(partes[0]), parseInt(partes[1]) - 1, parseInt(partes[2]));
+    const diaSemana = dataSelecionada.getDay();
+    if (diaSemana !== 0 && diaSemana !== 6) {
+      alert("Por favor, selecione um sábado ou domingo.");
+      this.value = "";
+    }
+  });
+});
+</script>
+</body>
+</html>
+

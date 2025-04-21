@@ -16,9 +16,7 @@ Site oficial da trancista Queen of Braids, onde você pode visualizar os estilos
 ### 🌐 Acesse o site
 
 > Em breve no link:  
-> `https://SEU_USUARIO.github.io/queen-of-braids`
-
-📌 Substitua o `SEU_USUARIO` pelo seu nome de usuário do GitHub!
+> `https://MarcowDev.github.io/queen-of-braids`
 
 ---
 
